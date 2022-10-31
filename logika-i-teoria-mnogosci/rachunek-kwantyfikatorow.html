@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Klasyczny rachunek kwantyfikatorów</title>
+        <meta charset='utf-8'/>
+        <link rel="stylesheet" type="text/css" href="./rachunek-kwantyfikatorow.html_files/styles.css">
+        <script>
+            window.onload = function() {
+                if (document.querySelector("script[type=\"math/tex; mode=display\"]") !== null) {
+                    var mathjax = document.createElement("script");
+                    mathjax.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
+                    document.head.appendChild(mathjax);
+                }
+                if (document.getElementsByTagName("code").length !== 0) {
+                    var highlight = document.createElement("script");
+                    var highlightcss = document.createElement("link");
+                    highlight.src = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js";
+                    highlightcss.rel = "stylesheet";
+                    highlightcss.href = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css";
+                    highlight.onload = function() {hljs.initHighlighting();};
+                    document.head.appendChild(highlight);
+                    document.head.appendChild(highlightcss);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <article>
+            <h1 id="klasyczny-rachunek-kwantyfikator%C3%B3w">Klasyczny rachunek kwantyfikatorów</h1>
+<h3 id="forma-zdaniowa-definicja">Forma zdaniowa - definicja</h3>
+<p>Wyrażenie:</p>
+<script type="math/tex; mode=display">\varphi(n) \equiv n > 10, n \in N</script><script type="math/tex; mode=display">\varphi : X \to B, B = \{ 0, 1 \}</script><p>jest formą zdaniową z wolną zmienną n.</p>
+<p>Zakres zmiennej (inaczej zbiór przedmiotów, uniwersum, przestrzeń) x to zbiór wszystkich obiektów, których nazwy można podstawić za x.</p>
+<p>Forma zdaniowa (predykat) to funkcja zwracająca wartość binarną {0, 1} . Oznaczamy je jako: </p>
+<script type="math/tex; mode=display">\varphi(x), \chi(x), \psi(x)</script><p>Kwantyfikator ogólny &quot;dla każdego&quot;(uogólnienie koniunkcji).</p>
+<script type="math/tex; mode=display">\forall x \in X : \varphi(x)</script><p>Kwantyfikator szczegółowy &quot;istnieje&quot; (uogólnienie alternatywy).</p>
+<script type="math/tex; mode=display">\exists x \in X : \varphi(x)</script><p>Przykładowa forma zdaniowa:</p>
+<script type="math/tex; mode=display">\varphi(x) \equiv x^2 \lt 1, x \in X, X = R</script><script type="math/tex; mode=display">\varphi(x) \equiv 1 \iff x \in (-1; 1)</script><p><strong>Zawsze definiujemy zakres zmienności zmiennych nazwowych!</strong></p>
+<h3 id="formy-zdaniowe-i-kwantyfikatory">Formy zdaniowe i kwantyfikatory</h3>
+<p>Jeżeli <script type="math/tex">\varphi(x), \psi(x)</script> są formami zdaniowymi, to są nimi również:</p>
+<ol>
+<li><script type="math/tex; mode=display">\varphi(x) \land \psi(x)</script></li><li><script type="math/tex; mode=display">\varphi(x) \lor \psi(x)</script></li><li><script type="math/tex; mode=display">\varphi(x) \implies \psi(x)</script></li><li><script type="math/tex; mode=display">\varphi(x) \iff \psi(x)</script></li><li><script type="math/tex; mode=display">\neg\varphi(x), \neg\psi(x)</script>I tym podobne (formy zdaniowe możemy traktować jako wartości logiczne, tj. p czy q.</li></ol>
+<p>Obłożenie formy zdaniowej kwantyfikatorem jej zmiennej przekształca tą formę w zdanie:
+    Forma zdaniowa (wartość zależy od <script type="math/tex">x</script>):   <script type="math/tex">\varphi(x)</script>
+    Zdanie (wartość od niczego nie zależy):    <script type="math/tex">\forall x \in X : \varphi(x)</script>
+Jednak gdy nie wszystkie zmienne są związane przez kwantyfikator, jest to forma zdaniowa:</p>
+<script type="math/tex; mode=display">[ \forall x \in X : \psi(x, y) ] \equiv \chi(y)</script><p>Zmienna x jest związana przez kwantyfikator ogólny, ale y pozostaje wolna.</p>
+<p>Zasięg kwantyfikatora definiują nawiasy.
+    Oba x związane: <script type="math/tex">\forall x \in R : [(x > 0) \land (x < 2)]</script>
+    Prawy x wolny:  <script type="math/tex">(\forall x \in R : x > 0) \land (x < 2)</script></p>
+<p>Tylko wolne zmienne mogą być związane przez kwantyfikator.</p>
+<script type="math/tex; mode=display">\exists x : \{ (\forall x : x > 0) \land (x < 2) \}</script><p>Lewy x jest związany z kwantyfikatorem ogólnym, a prawy x jest związany z kwantyfikatorem szczegółowym.</p>
+<h3 id="dwukropek-po-kwantyfikatorach">Dwukropek po kwantyfikatorach</h3>
+<p>Dla kwantyfiaktora ogólnego zastępuje implikację:</p>
+<script type="math/tex; mode=display">\forall_{x \in X} \psi(x) \equiv \forall x \in X : \psi(x) \equiv \forall_x x \in X \implies \psi(x)</script><p>Dla kwantyfikatora szczegółowego zastępuje koniunkcję:</p>
+<script type="math/tex; mode=display">\exists_{x \in X} \chi(x) \equiv \exists x \in X : \chi(x) \equiv \exists_x x \in X \land \chi(x)</script><h3 id="podstawowe-prawa-rachunku-kwantyfikator%C3%B3w">Podstawowe prawa rachunku kwantyfikatorów</h3>
+<p><strong>Wiele jest powtórkami z rachunku zdań.</strong>
+Założenia:</p>
+<script type="math/tex; mode=display">x \in X, X \neq \varnothing</script><ol>
+<li>Prawo orzekania o wszystkim:<script type="math/tex; mode=display">\forall x : \psi(x) \implies \psi(x_0), x_0 \in X</script>Kontrapozycja: <script type="math/tex">\neg \psi(x_0) \implies \neg \forall x : \psi(x)</script></li><li>Prawo generalizacji egzystencjalnej:<script type="math/tex; mode=display">\psi(x_0) \implies \exists x : \psi(x)</script>Kontrapozycja: <script type="math/tex">\neg \exists x : \psi(x) \implies \neg \psi(x_0)</script></li><li>Prawo subalternacji (wynika z 1. i 2.) :<script type="math/tex; mode=display">\forall x : \psi(x) \implies \exists x : \psi(x)</script></li><li>Prawo DeMorgana I:<script type="math/tex; mode=display">\neg \forall x : \psi(x) \implies \exists x : \neg \psi(x)</script></li><li>Prawo DeMorgana II:<script type="math/tex; mode=display">\neg \exists x : \psi(x) \implies \forall x : \neg \psi(x)</script></li><li>Twierdzenie prawa wyłączania i włączania kwantyfiaktorów dla:<ul>
+<li>Koniunkcji:<script type="math/tex; mode=display">\forall x : (\psi(x) \land p) \iff (\forall x : \psi(x)) \land p</script><script type="math/tex; mode=display">\exists x : (\psi(x) \land p) \iff (\exists x : \psi(x)) \land p</script></li><li>Alternatywy:<script type="math/tex; mode=display">\forall x : (\psi(x) \lor p) \iff (\forall x : \psi(x)) \lor p</script><script type="math/tex; mode=display">\exists x : (\psi(x) \lor p) \iff (\exists x : \psi(x)) \lor p</script></li><li>Implikacji:<script type="math/tex; mode=display">\forall x : (\psi(x) \implies p) \iff (\exists x : \psi(x)) \implies p</script><script type="math/tex; mode=display">\exists x : (\psi(x) \implies p) \iff (\forall x : \psi(x)) \implies p</script><script type="math/tex; mode=display">\forall x : (p \implies \psi(x)) \iff (p \implies \forall x : \psi(x))</script><script type="math/tex; mode=display">\exists x : (\psi(x) \implies p) \iff (p \implies \exists x : \psi(x))</script>Gdzie p to dowolne zdanie logiczne lub forma zdaniowa.</li></ul>
+</li><li>Rozdzielność kwantyfikatora ogólnego względem koniunkcji:<script type="math/tex; mode=display">\forall x : (\varphi(x) \land \psi(x)) \iff (\forall x : \varphi(x)) \land (\forall x : \psi(x))</script></li><li>Półrozdzielność kwantyfikatora ogólnego względem alternatywy:<script type="math/tex; mode=display">(\forall x : \varphi(x)) \lor (\forall x : \psi(x)) \implies (\forall \varphi(x) \lor \psi(x))</script><ol>
+<li>Rozdzielność kwantyfikatora szczegółowego względem alternatywy:<script type="math/tex; mode=display">\exists x : (\varphi(x) \lor \psi(x)) \iff (\exists x : \varphi(x)) \lor (\exists x : \psi(x))</script></li><li>Pólrozdzielność kwantyfikatora szczegółowego względem koniunkcji:<script type="math/tex; mode=display">\exists x : (\varphi(x) \land \psi(x)) \implies (\exists x : \varphi(x)) \land (\exists x : \psi(x))</script></li><li>Prawo rozkładania kwantyfikatora ogólnego:<script type="math/tex; mode=display">\{\forall x : (\varphi(x) \implies \psi(x))\} \implies \{\forall x : \varphi(x) \implies \forall x : \psi(x)\}</script><script type="math/tex; mode=display">\{\forall x : (\varphi(x) \iff \psi(x))\} \implies \{\forall x : \varphi(x) \iff \forall x : \psi(x)\}</script></li><li>Prawo rozkładania kwantyfikatora szczegółowego:<script type="math/tex; mode=display">\{\forall x : (\varphi(x) \implies \psi(x))\} \implies \{\exists x : \varphi(x) \implies \exists x : \psi(x)\}</script><script type="math/tex; mode=display">\{\forall x : (\varphi(x) \iff \psi(x))\} \implies \{\exists x : \varphi(x) \iff \exists x : \psi(x)\}</script></li></ol>
+</li></ol>
+
+        </article>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Metody Dowodzenia</title>
+        <meta charset='utf-8'/>
+        <link rel="stylesheet" type="text/css" href="./metody-dowodzenia.html_files/styles.css">
+        <script>
+            window.onload = function() {
+                if (document.querySelector("script[type=\"math/tex; mode=display\"]") !== null) {
+                    var mathjax = document.createElement("script");
+                    mathjax.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
+                    document.head.appendChild(mathjax);
+                }
+                if (document.getElementsByTagName("code").length !== 0) {
+                    var highlight = document.createElement("script");
+                    var highlightcss = document.createElement("link");
+                    highlight.src = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js";
+                    highlightcss.rel = "stylesheet";
+                    highlightcss.href = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css";
+                    highlight.onload = function() {hljs.initHighlighting();};
+                    document.head.appendChild(highlight);
+                    document.head.appendChild(highlightcss);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <article>
+            <h1 id="metody-dowodzenia">Metody Dowodzenia</h1>
+<h3 id="kontrprzyk%C5%82ad">Kontrprzykład</h3>
+<p>Do dowodzenia, że dana formuła <strong>nie jest tautologią.</strong>
+Należy podać kontrprzykład, dla którego formuła nie zachodzi.
+<strong>ZAWSZE trzeba definiować zbiór przedmiotów.</strong></p>
+<h3 id="co-ju%C5%BC-om%C3%B3wili%C5%9Bmy">Co już omówiliśmy</h3>
+<p><img src="metody-dowodzenia.html_files/images/Screenshot from 2022-10-25 15-16-48.png" alt="prawa omówione wcześniej"></p>
+<h3 id="dow%C3%B3d-wprost">Dowód wprost</h3>
+<p><img src="metody-dowodzenia.html_files/images/Screenshot from 2022-10-25 15-23-20.png" alt="dowód wprost"></p>
+<h3 id="dow%C3%B3d-nie-wprost">Dowód nie wprost</h3>
+<p><img src="metody-dowodzenia.html_files/images/Screenshot from 2022-10-25 15-33-25.png" alt="alt text">
+<img src="metody-dowodzenia.html_files/images/Screenshot from 2022-10-25 15-40-29.png" alt="alt text"></p>
+<p>A jeżeli dowód niewprost nie prowadzi do sprzeczności, to prowadzi do warunków ułatwiających znalezienie kontrprzykładu: 
+<img src="metody-dowodzenia.html_files/images/Screenshot from 2022-10-25 15-45-07.png" alt="alt text"></p>
+<p>Kolejny przykład:
+<img src="metody-dowodzenia.html_files/images/Screenshot from 2022-10-25 15-55-07.png" alt="alt text"></p>
+<h3 id="formy-zdaniowe-wielu-zmiennych">Formy zdaniowe wielu zmiennych</h3>
+<p>Formy zdaniowe mogą mieć więcej niż jedną zmienną.</p>
+<script type="math/tex; mode=display">\chi(x_1, x_2, x_3) \equiv (x_1 > x_2 \lor x_1 < x_3) \land (x_1 > 2 \implies x_2 > 3)</script><script type="math/tex; mode=display">x_1, x_2, x_3 \in R</script><script type="math/tex; mode=display">\chi(1, 2, 3) \equiv 1</script><script type="math/tex; mode=display">\chi(2, 3, 1) \equiv 0</script>
+        </article>
+    </body>
+</html>

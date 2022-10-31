@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Kodowanie Liczb</title>
+        <meta charset='utf-8'/>
+        <link rel="stylesheet" type="text/css" href="./kodowanie.html_files/styles.css">
+        <script>
+            window.onload = function() {
+                if (document.querySelector("script[type=\"math/tex; mode=display\"]") !== null) {
+                    var mathjax = document.createElement("script");
+                    mathjax.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
+                    document.head.appendChild(mathjax);
+                }
+                if (document.getElementsByTagName("code").length !== 0) {
+                    var highlight = document.createElement("script");
+                    var highlightcss = document.createElement("link");
+                    highlight.src = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js";
+                    highlightcss.rel = "stylesheet";
+                    highlightcss.href = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css";
+                    highlight.onload = function() {hljs.initHighlighting();};
+                    document.head.appendChild(highlight);
+                    document.head.appendChild(highlightcss);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <article>
+            <h1 id="kodowanie-liczb">Kodowanie Liczb</h1>
+<h3 id="kodowanie">Kodowanie</h3>
+<p><strong>To przyporządkowanie poszczególnym obiektom zbioru kodowanego odpowiadających im elementów zwanych słowami kodowymi,</strong> przy czym każdemu słowu kodowemu musi odpowiadać dokładnie jeden element kodowe (tak jak funkcja).</p>
+<h3 id="kod-nkb">Kod NKB</h3>
+<p><strong>Inaczej Naturalny Kod Binarny</strong>
+niech: </p>
+<ul>
+<li><script type="math/tex">k</script> = długość słowa binarnego</li><li><script type="math/tex; mode=display">A$$ = liczba dziesiętna
+wtedy:
+$$A < 2^k < 2A + 1</script></li></ul>
+<h3 id="kod-bcd">Kod BCD</h3>
+<p><strong>Tak jak NKB, ale każda cyfra na osobnym bicie</strong></p>
+<h3 id="kod-gray-a">Kod Gray&#39;a</h3>
+<p><strong>Kolejne słowa różnią się tylko za jednej pozycji,</strong> zaczynając od najmłodszego bita.
+NKB (010) -&gt; 
+-&gt; Przesuwamy 1 bit w prawo (001) -&gt; 
+-&gt; XOR(NKB, NKB przesunięte w prawo) = 011 (dodajemy bity bez przenoszenia jedynek dalej) </p>
+<p>Kolejne liczby w kodzie Gray&#39;a:</p>
+<ol>
+<li>000</li><li>001</li><li>011</li><li>010</li><li>110</li><li>111</li><li>101</li><li>100</li></ol>
+<h3 id="kody-zm-u1-u2">Kody ZM, U1, U2</h3>
+<p><strong>Są w notatkach z podstaw informatyki.</strong></p>
+<h3 id="jednostka-alu">Jednostka ALU</h3>
+<p><strong>Inaczej Arytmetyczno-Logiczna</strong> - część komputera, która realizuje operacje arytmetyczne i logiczne na danych.</p>
+<p>Jednostka sterująca -&gt; |=======| -&gt; Znaczniki stanu
+                       |  ALU  |
+           Rejestry -&gt; |=======| -&gt; Rejestry</p>
+<p>(Rejestr B) -&gt; (Układ dopełniający)
+        |    |
+        v    v
+       (Sumator) &lt;=&gt; (Rejestr A)
+       |
+       v
+(Przepełnienie - 1 bitowy znacznik przepełnienia)</p>
+<h3 id="regu%C5%82a-odejmowania">Reguła odejmowania</h3>
+<p>W celu otrzymania A - B, weź U2 B i dodaj do A.</p>
+
+        </article>
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Kodowanie Liczb</title>
+        <meta charset='utf-8'/>
+        <link rel="stylesheet" type="text/css" href="./kodowanie.html_files/styles.css">
+        <script>
+            window.onload = function() {
+                if (document.querySelector("script[type=\"math/tex; mode=display\"]") !== null) {
+                    var mathjax = document.createElement("script");
+                    mathjax.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
+                    document.head.appendChild(mathjax);
+                }
+                if (document.getElementsByTagName("code").length !== 0) {
+                    var highlight = document.createElement("script");
+                    var highlightcss = document.createElement("link");
+                    highlight.src = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js";
+                    highlightcss.rel = "stylesheet";
+                    highlightcss.href = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css";
+                    highlight.onload = function() {hljs.initHighlighting();};
+                    document.head.appendChild(highlight);
+                    document.head.appendChild(highlightcss);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <article>
+            <h1 id="kodowanie-liczb">Kodowanie Liczb</h1>
+<h3 id="terminy-egzamin%C3%B3w">Terminy Egzaminów</h3>
+<ul>
+<li>Termin 1: 1.02.2023</li><li>Termin 2: 22.02.2023
+Godzina <strong>9:00 - 12:00</strong></li></ul>
+<h3 id="kodowanie-znak-modu%C5%82-zm">Kodowanie ZNAK MODUŁ (ZM)</h3>
+<p><strong>Najstarszy bit = Znak (1 = -; 0 = +)</strong>
+ 0  = 0000 0000 
+-0 = 1111 1111
+MIN = <script type="math/tex">-2^{n - 1} + 1</script>
+MAX = <script type="math/tex">2^{n - 1} - 1</script>
+(gdzie n = liczba bitów)</p>
+<h3 id="kodowanie-znak-modu%C5%82-odwrotny-u1">Kodowanie ZNAK MODUŁ ODWROTNY (U1)</h3>
+<p><strong>Dla liczb ujemnych odwracamy znaki, najstarszy bit def. znak, jak w ZM</strong></p>
+<h3 id="kodowanie-uzupe%C5%82nieniowe-u2">Kodowanie UZUPEŁNIENIOWE (U2)</h3>
+<p><strong>Dodajemy 1 do kodu U1, najstarszy bit def. znak, jak w ZM</strong>
+0 = 0000 0000
+MIN = 1000 0000
+MAX = 0111 1111
+ZAKRES = <script type="math/tex"><-2^{n - 1}; 2^{n - 1} - 1></script></p>
+<h3 id="kodowanie-sta%C5%82oprzecinkowe">Kodowanie STAŁOPRZECINKOWE</h3>
+<p><strong>Stała liczba bitów dla liczb całkowitch jak i ułamkowych</strong>
+0 = 0000 0000.0000 0000
+MIN = 0000 0000.0000 0001 = <script type="math/tex">2^{-u}</script>
+MAX = 1111 1111.1111 1111 = <script type="math/tex">2^k - 2^{-u}</script></p>
+<h3 id="kodowanie-sta%C5%82op-ze-znakiem">Kodowanie STAŁOP. ZE ZNAKIEM</h3>
+<p><strong>To samo co STAŁOP. ale najstarszy bit def. znak, jak w ZM</strong></p>
+<h3 id="kodowanie-zmiennoprzecinkowe">Kodowanie ZMIENNOPRZECINKOWE</h3>
+<p><strong>W skrócie notacja wykładnicza</strong>
+F = <script type="math/tex">m * p^c</script>
+gdzie:
+    m - mantysa, liczba stałoprzecinkowa, <script type="math/tex">1 <= m < p</script>
+    c - cecha, wykładnik potęgowy
+    p - podstawa części potęgowej
+dla liczb binarnych <strong>p = 2</strong></p>
+<p>Słowo maszynowe: Z CCCC MMMM MMMM
+gdzie Z = znak, C = cecha, M = mantysa</p>
+
+        </article>
+    </body>
+</html>

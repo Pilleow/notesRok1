@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Paradygmaty Programowania</title>
+        <meta charset='utf-8'/>
+        <link rel="stylesheet" type="text/css" href="./paradygmaty-programowania.html_files/styles.css">
+        <script>
+            window.onload = function() {
+                if (document.querySelector("script[type=\"math/tex; mode=display\"]") !== null) {
+                    var mathjax = document.createElement("script");
+                    mathjax.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
+                    document.head.appendChild(mathjax);
+                }
+                if (document.getElementsByTagName("code").length !== 0) {
+                    var highlight = document.createElement("script");
+                    var highlightcss = document.createElement("link");
+                    highlight.src = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js";
+                    highlightcss.rel = "stylesheet";
+                    highlightcss.href = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css";
+                    highlight.onload = function() {hljs.initHighlighting();};
+                    document.head.appendChild(highlight);
+                    document.head.appendChild(highlightcss);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <article>
+            <h1 id="paradygmaty-programowania">Paradygmaty Programowania</h1>
+<h3 id="rodzaje-kodu">Rodzaje kodu</h3>
+<ol>
+<li><strong>Maszynowy</strong>:<ul>
+<li>Najszybszy i najmniejszy kod,</li><li>Zrozumiały przez procesor,</li><li>Totalnie nieczytelny,</li><li>Zależny od sprzętu,</li></ul>
+</li><li><strong>Niskiego</strong> poziomu:<ul>
+<li>Szybki do przetłumaczenia na maszynowy,</li><li>1 komenda = 1 rozkaz procesora,</li><li>Trudno napisać program,</li><li>Zależny od sprzętu,</li><li>Mało czytelny,</li></ul>
+</li><li><strong>Wysokiego</strong> poziomu:<ul>
+<li>Niezależny od sprzętu i systemu,</li><li>Szybki do napisania,</li><li>Czytelny,</li><li>Wielkość przetłumaczonego kodu jest większa,</li><li>Dużo tłumaczenia do języka maszynowego,</li><li>Wolniejszy niż w maszynowym kodzie,</li><li>Totalnie nieczytelny dla procesora,</li></ul>
+</li></ol>
+<h3 id="t%C5%82umaczenie-kodu">Tłumaczenie kodu</h3>
+<ol>
+<li><strong>Kompilator</strong>:<ul>
+<li>Przeprowadza polecenia preprocesora,</li><li>Analizuje kod pod względem składniowym, leksykalnym i semantycznym,</li><li>Optymalizuje i tłumaczy języki wyższego poziomu na niższe, póki nie dojdzie do języka maszynowego,</li></ul>
+</li><li><strong>Interpreter</strong>:<ul>
+<li>Analizuje i wykonuje kod za każdym razem,</li><li>Szybszy od kompilatora,</li></ul>
+</li><li><strong>Maszyna wirtualna</strong>:<ul>
+<li>Trochę kompilator, trochę interpreter,</li></ul>
+</li></ol>
+<h3 id="paradygmat">Paradygmat</h3>
+<p><strong>To zbiór pojęć i teorii tworzących podstawy programowania.</strong></p>
+<ol>
+<li><strong>DEKLARATYWNE</strong>:<ul>
+<li>W logice:<ul>
+<li>Andrzej Gorlich,</li></ul>
+</li><li>Funkcyjne:<ul>
+<li>Funkcje jako model danych,</li><li>Zawsze ten sam rezultat dla tych samych danych,</li><li>Niezmienne dane, nowa wartość to nowy obiekt,</li></ul>
+</li></ul>
+</li><li><strong>IMPERATYWNE</strong>:<ul>
+<li>Strukturalne (rodzaj proceduralnego): <ul>
+<li>Dzielenie kodu na fragmenty, które komunikują się przez dobrze określone interfejsy,</li><li>Zalecane pętle, instrukcje warunkowe,</li><li>Niezalecane <em>goto</em>, wielokrotnych punktów we/wy z kodu danego podbloku programu,</li></ul>
+</li><li>Obiektowe: <ul>
+<li>Komunikujące się ze sobą klasy i metody,</li><li>Zalecane obiekty, klasy, moduły w klasach,</li><li>Abstrakcja, enkapsulacja, modularność, hierarchia,</li></ul>
+</li></ul>
+</li></ol>
+<h3 id="odwrotna-notacja-polska">Odwrotna Notacja Polska</h3>
+<ul>
+<li>Bardzo ułatwia obliczenia,</li><li>Prosta konwersja,</li></ul>
+<p>Zapis infiksowy: 
+    (7 + 3) * 5</p>
+<p>Zapis prefiksowy:
+    * 5 + 7 3</p>
+<p>Zapis postfiksowy:
+    7 3 + 5 * </p>
+<ol>
+<li>Czytamy element X</li><li>Jeżeli X to zmienna lub stała: wypisz</li><li>Jeżeli X to operator:<ul>
+<li>Jeżeli priorytet X &gt; priorytetu operatora na szczycie: włóż na stos,</li><li>W przeciwnym wypadku: zdejmij ze stosu i wypisz aż będzie sytuacja powyżej,</li></ul>
+</li><li>Jeśli nawias otwierający: włóż na stos,</li><li>Jeśli nawias zamykający: zdejmij ze stosu wszystkie elementy i wypisz aż będzie nawias otwierający,</li><li>Jeśli jeszcze coś zostało: idź do 1.</li><li>W przeciwnym wypadku: Wypisz wszystkie elementy pozostałe na stosie,</li></ol>
+
+        </article>
+    </body>
+</html>

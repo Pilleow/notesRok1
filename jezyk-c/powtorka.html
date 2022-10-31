@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Powtórka C</title>
+        <meta charset='utf-8'/>
+        <link rel="stylesheet" type="text/css" href="./powtorka.html_files/styles.css">
+        <script>
+            window.onload = function() {
+                if (document.querySelector("script[type=\"math/tex; mode=display\"]") !== null) {
+                    var mathjax = document.createElement("script");
+                    mathjax.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
+                    document.head.appendChild(mathjax);
+                }
+                if (document.getElementsByTagName("code").length !== 0) {
+                    var highlight = document.createElement("script");
+                    var highlightcss = document.createElement("link");
+                    highlight.src = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js";
+                    highlightcss.rel = "stylesheet";
+                    highlightcss.href = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css";
+                    highlight.onload = function() {hljs.initHighlighting();};
+                    document.head.appendChild(highlight);
+                    document.head.appendChild(highlightcss);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <article>
+            <h1 id="powt%C3%B3rka-c">Powtórka C</h1>
+<h3 id="typy-liczbowe">Typy liczbowe</h3>
+<p><script type="math/tex">char</script> = 1 bajt (<0; 255> unsigned, &lt;-128; 127&gt; signed)</p>
+<p><script type="math/tex">int</script> = 2 bajty (<0; 65635> unsigned, &lt;-32768; 32767&gt; signed)</p>
+<p><script type="math/tex">float</script> = 4 bajty (<script type="math/tex">-3.4 * 10^{38}</script>; <script type="math/tex">3.4 * 10^{38}</script> )</p>
+<p><script type="math/tex">double</script> = 8 bajtów (<script type="math/tex">-1.7 * 10^{308}</script>; <script type="math/tex">1.7 * 10^{308}</script>)
+Dodatkowo kwalifikatory <script type="math/tex">long</script> i <script type="math/tex">short</script> wymuszają pewne wielkości bitowe.</p>
+<p>Tekst jest przechowywany jako lista <script type="math/tex">char</script>, np.:
+    &quot;Test&quot; = { &#39;T&#39;, &#39;e&#39;, &#39;s&#39;, &#39;t&#39;, &#39;\0&#39; }
+gdzie &#39;\0&#39; to znak końca napisu.
+btw. &#39;7&#39; =/= &quot;7&quot;</p>
+<h3 id="funkcje">Funkcje</h3>
+<pre><code class="lang-c">void hello(char s) {
+    printf(&quot;Hello, %d !&quot;, s);
+}
+</code></pre>
+<h3 id="deklaracja-sta%C5%82ych">Deklaracja stałych</h3>
+<pre><code class="lang-c">`#define X N`
+// makrodefinicja, kompilator pod każdy X podstawia N.
+// Makrami można również zastąpić funkcje, np.:
+`#define SQR(x) ((x) * (x))`
+
+const int x = N;`
+//zmienna, której wartość nie może ulec zmianie.
+
+enum months = { JAN=1, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC }
+// nadajemy pierwszej wartość, i potem każdej następnej automatycznie jest przypisana wartość o 1 większa od poprzedniej , np. MAY = 5.
+
+int i, j, k;
+double eps = 1.0e-6;
+// każda zmienna musi być zadeklarowana przed użyciem.
+{
+    extern float eps;
+    // ...
+}
+// EXTERN redeklaruje eps w nowym bloku. Używając EXTERN nigdy nie ustawiamy wartości.
+
+static int = 5;
+//Zmienna z kwalifikatorem STATIC pamięta wartość pomiędzy wywołanymi funkcjami.
+</code></pre>
+<h3 id="zasi%C4%99g-zmiennych">Zasięg zmiennych</h3>
+<ul>
+<li><strong>Zmienne lokalne</strong> są widoczne wewnątrz bloku ( {...} ), w którym zostały zadeklarowane, jak i w blokach w nim zagnieżdżonym.</li><li><strong>Zmienne zewnętrzne</strong> istnieją cały czas, są definiowane poza wszystkimi blokami.</li></ul>
+
+        </article>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Podstawy Algorytmów</title>
+        <meta charset='utf-8'/>
+        <link rel="stylesheet" type="text/css" href="./podstawy-algorytmow.html_files/styles.css">
+        <script>
+            window.onload = function() {
+                if (document.querySelector("script[type=\"math/tex; mode=display\"]") !== null) {
+                    var mathjax = document.createElement("script");
+                    mathjax.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
+                    document.head.appendChild(mathjax);
+                }
+                if (document.getElementsByTagName("code").length !== 0) {
+                    var highlight = document.createElement("script");
+                    var highlightcss = document.createElement("link");
+                    highlight.src = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js";
+                    highlightcss.rel = "stylesheet";
+                    highlightcss.href = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css";
+                    highlight.onload = function() {hljs.initHighlighting();};
+                    document.head.appendChild(highlight);
+                    document.head.appendChild(highlightcss);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <article>
+            <h1 id="podstawy-algorytm%C3%B3w">Podstawy Algorytmów</h1>
+<h3 id="rodzaje-zapisu-algorytm%C3%B3w">Rodzaje zapisu algorytmów</h3>
+<ul>
+<li>Lista kroków - uproszczenie</li><li>Pseudokod - projektowanie</li><li>Kod - implementacja</li><li>Schemat blokowy - wizualizacja</li></ul>
+<h3 id="przyk%C5%82adowe-algorytmy">Przykładowe algorytmy</h3>
+<ul>
+<li>Algorytm Euklidesa</li><li>Sortowanie Bąbelkowe</li><li>Algorytm Karacuby (zadanie 5 język C)</li></ul>
+<h3 id="warunki-poprawno%C5%9Bci-algorytmu">Warunki poprawności algorytmu</h3>
+<ul>
+<li>Zwraca poprawny wynik ( częściowa poprawność )</li><li>Zatrzymuje się po skończonej liczbie kroków ( całkowita poprawność )</li></ul>
+<h3 id="niezmiennik-p%C4%99tli-do-wyk-cz%C4%99%C5%9Bciowej-poprawno%C5%9Bci">Niezmiennik pętli (do wyk. częściowej poprawności)</h3>
+<p>Jest to następujący predykat:
+<strong>Jeśli predykat jest spełniony PRZED wejściem w pewną (dowolną) iterację pętli, to jest także spełniony PO wyjścii z tej iteracji pętli - INDUKCJA MATEMATYCZNA.</strong></p>
+
+        </article>
+    </body>
+</html>

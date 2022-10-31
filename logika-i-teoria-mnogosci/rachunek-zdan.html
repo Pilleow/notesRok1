@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Prawa i tw. rachunku zdań</title>
+        <meta charset='utf-8'/>
+        <link rel="stylesheet" type="text/css" href="./rachunek-zdan.html_files/styles.css">
+        <script>
+            window.onload = function() {
+                if (document.querySelector("script[type=\"math/tex; mode=display\"]") !== null) {
+                    var mathjax = document.createElement("script");
+                    mathjax.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML";
+                    document.head.appendChild(mathjax);
+                }
+                if (document.getElementsByTagName("code").length !== 0) {
+                    var highlight = document.createElement("script");
+                    var highlightcss = document.createElement("link");
+                    highlight.src = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js";
+                    highlightcss.rel = "stylesheet";
+                    highlightcss.href = "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css";
+                    highlight.onload = function() {hljs.initHighlighting();};
+                    document.head.appendChild(highlight);
+                    document.head.appendChild(highlightcss);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <article>
+            <h1 id="prawa-i-tw-rachunku-zda%C5%84">Prawa i tw. rachunku zdań</h1>
+<h3 id="prawa-poch%C5%82aniania">Prawa pochłaniania</h3>
+<script type="math/tex; mode=display">p \land q \implies p, p \land q \implies q</script><script type="math/tex; mode=display">p \implies p \lor q, q \implies p \lor q</script><h3 id="prawa-demorgana">Prawa DeMorgana</h3>
+<script type="math/tex; mode=display">\neg(p \lor q) \implies \neg p \land \neg q</script><script type="math/tex; mode=display">\neg(p \land q) \implies \neg p \lor \neg q</script><h3 id="prawo-eliminacji-implikacji">Prawo eliminacji implikacji</h3>
+<script type="math/tex; mode=display">(p \implies q) \iff \neg p \lor q</script><h3 id="prawo-zaprzeczenia-implikacji">Prawo zaprzeczenia implikacji</h3>
+<script type="math/tex; mode=display">\neg (p \implies q) \iff p \land \neg q</script><h3 id="prawo-sylogizmu">Prawo sylogizmu</h3>
+<script type="math/tex; mode=display">[(p \implies q) \land (q \implies g)] \implies p \implies g</script><h3 id="prawo-kontrapozycji">Prawo kontrapozycji</h3>
+<script type="math/tex; mode=display">(p \implies q) \iff (\neg q \implies \neg p)</script><h3 id="prawa-odrywania">Prawa odrywania</h3>
+<p><strong>(One są dość intuicyjne jeżeli dokładnie się je przeczyta)</strong></p>
+<ol>
+<li>ponendo ponens:<script type="math/tex; mode=display">[(p \implies q) \land \neg p] \implies q</script></li><li>tollendo tollens:<script type="math/tex; mode=display">[(p \implies q) \land \neg q] \implies \neg p</script></li><li>tollendo ponens:<script type="math/tex; mode=display">[(p \lor q) \land \neg p] \implies q</script></li><li>ponendo tollens:<script type="math/tex; mode=display">[\neg(p \land q) \land p] \implies \neg q</script></li></ol>
+<h3 id="metody-dowodzenia">Metody dowodzenia</h3>
+<ol>
+<li>Tabelaryczna - wyznaczanie wartości logicznej formuły dla wszystkich możliwych składników,</li><li>Wprost - Przejście z założenia do tezy wykorzystując prawa i twierdzenia rachunku zdań,</li><li>Nie Wprost - Dowodzenie twierdzenia przeciwstawnego,</li></ol>
+
+        </article>
+    </body>
+</html>
